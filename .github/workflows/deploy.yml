@@ -1,0 +1,34 @@
+name: Build and Deploy to Cloud Run
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Google Cloud SDK
+        uses: google-github-actions/setup-gcloud@v0
+        with:
+          service_account_key: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
+          project_id: python-gcp-422006
+
+      - name: Configure Docker
+        run: gcloud auth configure-docker
+
+      - name: Build and push to Google Container Registry
+        run: gcloud builds submit --config cloudbuild.yml .
+
+      - name: Deploy to Cloud Run
+        run: |
+          gcloud run deploy lingualens \
+            --image us-central1-docker.pkg.dev/python-gcp-422006/lingualens/lingualens-service:latest \
+            --platform managed \
+            --region us-central1 \
+            --allow-unauthenticated \
+            --set-env-vars NEXT_PUBLIC_GCP_API_KEY=${{ secrets.NEXT_PUBLIC_GCP_API_KEY }}
