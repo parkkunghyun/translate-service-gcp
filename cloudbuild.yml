@@ -1,6 +1,6 @@
 steps:
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '--platform', 'linux/amd64', '-t',  'us-central1-docker.pkg.dev/python-gcp-422006/gcp-service/gcp-ai-service:latest', '.']
+    args: ['build', '--platform', 'linux/amd64', '-t',  'us-central1-docker.pkg.dev/python-gcp-422006/lingualens/lingualens-service:latest', '.']
 
 images:
-  - 'us-central1-docker.pkg.dev/python-gcp-422006/gcp-service/gcp-ai-service:latest'
+  - 'us-central1-docker.pkg.dev/python-gcp-422006/lingualens/lingualens-service:latest'
