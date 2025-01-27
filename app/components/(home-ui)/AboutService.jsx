@@ -10,7 +10,7 @@ const AboutService = () => {
           <p className='font-bold text-4xl'>About Service</p>
           <motion.div
               initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
+              whileInView={{ opacity: 1 }}
               transition={{ duration: 1.5 }}
               className='flex flex-col text-md gap-2 items-center my-8'>
             <p className='md:text-sm'>이 서비스는 <span className='font-bold text-[#FF644D]'>Google Cloud의 Translate API</span>를 통해 다양한 언어로의 번역을 지원하며, </p>
@@ -21,8 +21,8 @@ const AboutService = () => {
           <div className='flex flex-col md:flex-row justify-between items-center gap-8 mt-16 '>
               <motion.div
                   initial={{ y: 200, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 1, delay: 0.5 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 1 }}
                   className='w-[400px] flex flex-col items-center gap-2 border-2 px-4 py-2 rounded-md shadow-black'>
                       <p>OCR이란?</p>
                         <Image src={"/images/ocr1.png"}
@@ -36,8 +36,8 @@ const AboutService = () => {
                     </motion.div>
               <motion.div
                   initial={{ y: 200, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 1, delay: 0.9 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 1, delay: 0.5}}
                   className='w-[400px] h-[350px] justify-center flex flex-col items-center gap-2 border-2 px-4 py-2 rounded-md shadow-black'>
                       <p>TTS(Text-to-Speech)란?</p>
                         <Image src={"/images/tts1.png"}

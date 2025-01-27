@@ -1,10 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import Header from "./components/Header";
-import HomeComponent from "./components/HomeComponent";
-import AboutService from "./components/AboutService";
+
 import { useEffect, useState } from "react";
+import Header from "./components/(home-ui)/Header";
+import HomeComponent from "./components/(home-ui)/HomeComponent";
+import AboutService from "./components/(home-ui)/AboutService";
 
 export default function Home() {
   return (
