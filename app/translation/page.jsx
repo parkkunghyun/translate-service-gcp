@@ -10,7 +10,7 @@ const TranslationPage = () => {
   const [choice, setChoice] = useState("translate");
 
   return (
-    <div className='w-full h-screen gap-8 bg-[#FFF6F6] flex flex-col items-center pt-40'>
+    <div className='w-full h-screen gap-8 bg-[#FFF6F6] flex flex-col items-center pt-36'>
       <Link href={"/"}>
       <IoIosArrowBack className='fixed text-4xl font-bold duration-300 cursor-pointer top-4 left-4 hover:scale-105'/>
       </Link>

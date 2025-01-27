@@ -25,6 +25,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="scroll-smooth ">
+      <head>
+      <link rel="icon" href="/images/tr-logo.png" />
+      </head>
       <body
         className={`${outfit.className}${oswald.className}  ${ovo.className} `}
       >

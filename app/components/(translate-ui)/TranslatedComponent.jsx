@@ -97,7 +97,7 @@ export default function TranslatedComponent() {
         <div className="flex items-center py-2 my-2 font-bold border-b-2 ">
           <p className="flex-1 ml-2 ">문장 or 단어를 입력해보세요.</p>
           <select
-            className="mr-2 bg-white focus:outline-none "
+            className="mr-2 bg-[#FFF6F6] focus:outline-none "
             value={selectedLanguage}
             onChange={(e) => setSelectedLanguage(e.target.value)}
           >

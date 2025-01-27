@@ -7,7 +7,7 @@ import { MdOutlineKeyboardDoubleArrowDown } from "react-icons/md";
 
 const HomeComponent = () => {
   return (
-      <div id='home' className=' flex min-w-[600px] h-screen pt-30 w-full justify-around'>
+      <div id='home' className=' flex min-w-[600px] h-screen pt-36 w-full justify-around'>
           <div
           className='flex flex-col items-start gap-4 mt-16'>
               <motion.div
