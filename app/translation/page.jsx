@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from 'react'
-import Navbar from '../components/(translate-ui)/navbar'
+import Navbar from '../components/(translate-ui)/Navbar';
 import TranslatedComponent from '../components/(translate-ui)/TranslatedComponent';
 import ImageTranslatedComponent from '../components/(translate-ui)/ImageTranslatedComponent';
 import { IoIosArrowBack } from "react-icons/io";
