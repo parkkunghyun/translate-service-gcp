@@ -56,7 +56,7 @@ const ImageTranslatedComponent = () => {
     }
 
     try {
-      const response = await axios.post('http://34.172.236.0:8000/extract-text/', formData, {
+      const response = await axios.post('https://fastapi-cloud-run-266457465664.us-central1.run.app/extract-text/', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -103,7 +103,7 @@ const ImageTranslatedComponent = () => {
 
   return (
     <>
-      <p className='text-xl font-bold '>음성은 영어 이미지만 출력이 가능합니다.</p>
+      <p className='text-sm font-bold '>음성은 영어 이미지만 출력이 가능합니다.</p>
       <div className="flex flex-col justify-center w-full gap-16 md:flex-row">
         {/* Image Upload Section */}
         <div className="border-2 relative flex flex-col shadow-[-7px_7px_0px_#000000] rounded-lg min-w-[300px] h-[250px] md:w-[400px] md:h-[400px]">
