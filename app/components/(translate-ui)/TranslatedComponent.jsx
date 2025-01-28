@@ -38,7 +38,6 @@ export default function TranslatedComponent() {
       {
         onSuccess: (data) => {
           setResultText(data);
-          console.log(data);
         },
         onError: () => {
           toast.error('번역 오류가 발생했습니다.');
@@ -49,8 +48,6 @@ export default function TranslatedComponent() {
 
   // TTS (Text to Speech) functionality
   const handleTextToSpeech = async (text) => {
-    console.log('tts text => ', text);
-    console.log('tts lan code => ', ttsLanguageCode);
     if (!text.trim()) {
       toast.error("음성으로 변환할 텍스트가 없습니다.");
       return;
@@ -90,6 +87,13 @@ export default function TranslatedComponent() {
     }
   }, [selectedLanguage]);
 
+  // Automatically translate when selectedLanguage or inputText changes
+  useEffect(() => {
+    if (inputText.trim()) {
+      handleTranslate();
+    }
+  }, [selectedLanguage, inputText]); // Trigger on language or text change
+
   return (
     <div className="flex flex-col justify-center w-full gap-16 md:flex-row">
       {/* Input Section */}
@@ -121,7 +125,7 @@ export default function TranslatedComponent() {
           </div>
           <button
             onClick={handleTranslate}
-            className="p-2 text-center text-white bg-green-400 border-l-2 rounded-md shadow-lg "
+            className="p-2 text-center text-white bg-green-300 rounded-md shadow-lg border-l-1 "
           >
             번역하기
           </button>
@@ -133,11 +137,9 @@ export default function TranslatedComponent() {
         <div className="flex items-center py-2 my-2 font-bold border-b-2 ">
           <p className="flex-1 ml-2">번역 결과</p>
         </div>
-        <p
-          onChange={(e) => setResultText(e.target.value)}
-          className="h-full p-2 bg-transparent focus:outline-none "
-          placeholder="번역 결과가 여기에 표시됩니다"
-        >{resultText}</p>
+        <p className="h-full p-2 bg-transparent focus:outline-none ">
+          {resultText}
+        </p>
         <div className="flex items-center border-t-2 dark:border-white">
           <div className="flex flex-1 gap-4 px-4 my-2.5 text-xl">
             <AiOutlineSound onClick={() => handleTextToSpeech(resultText)} className="text-2xl cursor-pointer hover:text-slate-400" />
